@@ -1,5 +1,5 @@
 var Canvas = require('openvg-canvas'),
-	LEDMatrix = new require('pi-led-matrix'),
+	LEDMatrix = new require('pi-led-matrix')(),
 	AnimationLoop = require('./lib/animation-loop'),
     canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
@@ -34,7 +34,7 @@ function draw () {
 
 	// Convert to regular array
 	for (var i = 0; i < typedData.length; i++) {
-		data.push(typedData[i]);
+		data.shift(typedData[i]);
 	}
 
 	LEDMatrix.setPixels(data);
