@@ -26,6 +26,9 @@ function draw () {
 	ctx.fillStyle = gradient;
 	ctx.fillText("FPS: "+frameRate, 10, 20);
 	ctx.fillText("Frame: "+frame.toString(), 10, 40);
+
+	var data = ctx.getImageData(0, 0, w, h);
+	console.info(data);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
