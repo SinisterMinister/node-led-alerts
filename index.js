@@ -18,7 +18,7 @@ function draw () {
 
 	// Fill with gradient
 	ctx.fillStyle = gradient;
-	ctx.fillText("Test", 10, 10);
+	ctx.fillText(AnimationLoop.getFrameRate(), 10, 20);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
