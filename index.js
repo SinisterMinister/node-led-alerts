@@ -32,9 +32,9 @@ function draw () {
 		data = [];
 
 	// Convert to regular array
-	typedData.forEach(function (val) {
-		data.push(val);
-	});
+	for (var i = 0; i < typedData.length; i++) {
+		data.push(typedData[i]);
+	}
 }
 
 AnimationLoop.register('canvasDrawer', draw);
