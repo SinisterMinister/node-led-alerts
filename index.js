@@ -2,11 +2,17 @@ var Canvas = require('openvg-canvas'),
 	AnimationLoop = require('./lib/animation-loop'),
     canvas = new Canvas(32, 128),
     ctx = canvas.getContext('2d'),
-    w = canvas.width, h = canvas.height;
+    w = canvas.width, h = canvas.height,
+	frame = 0,
+	frameRate = "NA";
 
 
 
 function draw () {
+	if (frame % 100 === 0) {
+		frameRate = AnimationLoop.getFrameRate().toString()
+	}
+
 	ctx.clearRect(0, 0, w, h);
 
 	ctx.font = "16px sans-serif";
@@ -18,7 +24,7 @@ function draw () {
 
 	// Fill with gradient
 	ctx.fillStyle = gradient;
-	ctx.fillText(AnimationLoop.getFrameRate().toString(), 10, 20);
+	ctx.fillText(, 10, 20);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
