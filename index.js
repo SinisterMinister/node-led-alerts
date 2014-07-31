@@ -27,8 +27,8 @@ function draw () {
 	ctx.fillText("FPS: "+frameRate, 10, 20);
 	ctx.fillText("Frame: "+frame.toString(), 10, 40);
 
-	var data = Canvas.Image.saveToBuffer(ctx.getImageData(0, 0, w, h));
-	console.info(data);
+	var data = ctx.getImageData(0, 0, w, h);
+	console.info(data.data);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
