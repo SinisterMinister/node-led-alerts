@@ -9,7 +9,7 @@ var Canvas = require('openvg-canvas'),
 
 
 function draw () {
-	if (frame % 100 === 0) {
+	if (frame % 1000 === 0) {
 		frameRate = AnimationLoop.getFrameRate().toString()
 	}
 
