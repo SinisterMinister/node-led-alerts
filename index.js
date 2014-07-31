@@ -28,7 +28,7 @@ function draw () {
 	ctx.fillText("Frame: "+frame.toString(), 10, 40);
 
 	var data = ctx.getImageData(0, 0, w, h);
-	console.info(data);
+	console.info(data.getData());
 }
 
 AnimationLoop.register('canvasDrawer', draw);
