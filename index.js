@@ -13,7 +13,8 @@ function draw () {
 		frameRate = AnimationLoop.getFrameRate().toString()
 	}
 
-	ctx.clearRect(0, 0, w, h);
+	ctx.fillStyle('white');
+	ctx.fillRect(0, 0, w, h);
 
 	ctx.font = "16px sans-serif";
 
