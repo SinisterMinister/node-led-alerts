@@ -33,8 +33,8 @@ function draw () {
 		data = [];
 
 	// Convert to regular array
-	for (var i = 0; i < typedData.length; i++) {
-		data.shift(typedData[i]);
+	for (var i = typedData.length - 1; i >= 0; i--) {
+		data.push(typedData[i]);
 	}
 
 	LEDMatrix.setPixels(data);
