@@ -1,6 +1,6 @@
 var Canvas = require('openvg-canvas'),
 	AnimationLoop = require('./lib/animation-loop'),
-    canvas = new Canvas(200, 200),
+    canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height,
 	frame = 0,
@@ -28,6 +28,8 @@ function draw () {
 	ctx.fillText("Frame: "+frame.toString(), 10, 40);
 
 	var data = ctx.getImageData(0, 0, w, h).data;
+
+	console.info(data.toString());
 }
 
 AnimationLoop.register('canvasDrawer', draw);
