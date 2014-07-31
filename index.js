@@ -29,7 +29,13 @@ function draw () {
 
 	var data = ctx.getImageData(0, 0, w, h).data;
 
-	console.info(data.length);
+	var pdata = [];
+
+	for (var i = 0; i < 32; i++) {
+		pdata[i] = data[i];
+	}
+
+	console.info.call(null, pdata);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
