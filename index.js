@@ -35,7 +35,7 @@ function draw () {
 		pdata.push(data[i]);
 	}
 
-	console.info.call(null, pdata);
+	console.info.apply(null, pdata);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
