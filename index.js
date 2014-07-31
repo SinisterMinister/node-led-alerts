@@ -32,7 +32,7 @@ function draw () {
 	var pdata = [];
 
 	for (var i = 0; i < 32; i++) {
-		pdata[i] = data[i];
+		pdata.push(data[i]);
 	}
 
 	console.info.call(null, pdata);
