@@ -8,8 +8,6 @@ var Canvas = require('openvg-canvas'),
 
 
 function draw () {
-	console.info(AnimationLoop.getFrameRate());
-
 	ctx.clearRect(0, 0, w, h);
 
 	ctx.font = "16px sans-serif";
