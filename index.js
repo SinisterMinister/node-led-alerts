@@ -39,8 +39,8 @@ function draw () {
 
 	// Set the text fill to the gradient and write the text
 	ctx.fillStyle = gradient;
-	ctx.fillText("FPS: "+frameRate, 2, 8);
-	ctx.fillText("Frame: "+frame.toString(), 2, 16);
+	ctx.fillText("FPS: "+frameRate, 20, 8);
+	ctx.fillText("Frame: "+frame.toString(), 20, 16);
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
