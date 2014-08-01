@@ -23,8 +23,8 @@ function draw () {
 
 		// Fill with gradient
 		ctx.fillStyle = gradient;
-		ctx.fillText("The quick brown fox jumps over the lazy dog".toLowerCase(), 10, 14);
-		ctx.fillText("The quick brown fox jumps over the lazy dog".toUpperCase(), 10, 30);
+		ctx.fillText("The quick brown fox jumps over the lazy dog 0123456789".toLowerCase(), 10, 14);
+		ctx.fillText("The quick brown fox jumps over the lazy dog 0123456789".toUpperCase(), 10, 30);
 
 		typedData = ctx.getImageData(0, 0, w, h).data;
 	}
