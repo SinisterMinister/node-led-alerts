@@ -50,6 +50,8 @@ function draw () {
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
+
+	Canvas.vgSwapBuffers();
 }
 
 // Add the draw function to the loop register
