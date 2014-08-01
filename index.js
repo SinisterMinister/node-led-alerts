@@ -5,5 +5,7 @@ var AnimationLoop = require('./lib/animation-loop'),
 // Load the pacman loader
 var pacman = new Pacman(canvas);
 
+pacman.enable();
+
 // Start the animation loop
 AnimationLoop.start();
