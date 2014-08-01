@@ -38,6 +38,10 @@ process.on('exit', function () {
 	}
 
 	LEDMatrix.setPixels(data);
+
+	process.nextTick(function () {
+		console.info('Shutting down...');
+	})
 });
 
 //// HAPI server
