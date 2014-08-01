@@ -1,8 +1,6 @@
 var Canvas = require('openvg-canvas'),
 //	LEDMatrix = new require('pi-led-matrix')(),
 	AnimationLoop = require('./lib/animation-loop'),
-	path = require('path'),
-	fs = require('fs'),
     canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height;
