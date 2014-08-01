@@ -1,6 +1,7 @@
 var AnimationLoop = require('./lib/animation-loop'),
 	Pacman = require('./lib/canvas/pacman'),
-    canvas = require('./lib/canvas');
+    canvas = require('./lib/canvas'),
+	server = require('./lib/server');
 
 // Load the pacman loader
 var pacman = new Pacman(canvas);
