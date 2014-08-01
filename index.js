@@ -24,6 +24,10 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
+	ctx.font = "16px ./fontawesome-webfont.ttf";
+	ctx.fillStyle = 'yellow';
+	ctx.fillText("\f071", 2, 24);
+
 	// Set the font to 6px
 	ctx.font = "6px ./04B_03__.TTF";
 
