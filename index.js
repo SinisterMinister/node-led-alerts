@@ -1,11 +1,16 @@
 var Canvas = require('openvg-canvas'),
 	LEDMatrix = new require('pi-led-matrix')(),
 	AnimationLoop = require('./lib/animation-loop'),
+	path = require('path'),
     canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height,
 	frame = 0;
 
+
+// Register the fonts
+Canvas.Text.registerFont('small-font', process.cwd()+'/small-font.ttf');
+Canvas.Text.registerFont('fontawesome-webfont', process.cwd()+'/fontawesome-webfont.ttf');
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
@@ -24,12 +29,12 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
-	ctx.font = "16px ./fontawesome-webfont.ttf";
+	ctx.font = "16px fontawesome-webfont";
 	ctx.fillStyle = 'yellow';
 	ctx.fillText("\f071", 2, 24);
 
 	// Set the font to 6px
-	ctx.font = "6px ./04B_03__.TTF";
+	ctx.font = "6px small-font";
 
 	// Build a gradient for the text
 	var gradient=ctx.createLinearGradient(0,0,w,0);
