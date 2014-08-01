@@ -4,14 +4,16 @@ var Canvas = require('openvg-canvas'),
     canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height,
-	frame = 0,
-	frameRate = "NA";
+	frame = 0;
 
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
  */
 function draw () {
+	// Get the framerate
+	frameRate = AnimationLoop.getFrameRate().toString();
+	
 	// Clear the canvas
 	ctx.clearRect(0, 0, w, h);
 
