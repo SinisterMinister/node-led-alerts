@@ -5,37 +5,40 @@ var Canvas = require('openvg-canvas'),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height,
 	frame = 0,
-	frameRate = "NA",
-	typedData;
+	frameRate = "NA";
 
+
+/**
+ * This is the callback that puts stuff into the canvas and renders to the matrix
+ */
 function draw () {
-	if (frame++ % 100 === 0) {
+	// Clear the canvas
+	ctx.clearRect(0, 0, w, h);
 
-		ctx.fillStyle = 'black';
-		ctx.fillRect(0, 0, w, h);
+	// Set the backgroud to black
+	ctx.fillStyle = 'black';
+	ctx.fillRect(0, 0, w, h);
 
-		ctx.font = "6px sans-serif";
+	// Set the font to 8px
+	ctx.font = "8px monospace";
 
-		var gradient=ctx.createLinearGradient(0,0,w,0);
-		gradient.addColorStop("0","magenta");
-		gradient.addColorStop("0.5","blue");
-		gradient.addColorStop("1.0","red");
+	// Build a gradient for the text
+	var gradient=ctx.createLinearGradient(0,0,w,0);
+	gradient.addColorStop("0","red");
+	gradient.addColorStop("0.5","white");
+	gradient.addColorStop("1.0","blue");
 
-		// Fill with gradient
-		ctx.fillStyle = gradient;
-		ctx.fillText("The quick brown fox jumps over the lazy dog 0123456789".toLowerCase(), 10, 14);
-		ctx.fillText("The quick brown fox jumps over the lazy dog 0123456789".toUpperCase(), 10, 30);
+	// Set the text fill to the gradient and write the text
+	ctx.fillStyle = gradient;
+	ctx.fillText("FPS: "+frameRate, 10, 14);
+	ctx.fillText("Frame: "+frame.toString(), 10, 30);
 
-		typedData = ctx.getImageData(0, 0, w, h).data;
-	}
-
-//	// Convert to regular array
-//	for (var i = typedData.length - 1; i >= 0; i--) {
-//		data.push(typedData[i]);
-//	}
-
-	LEDMatrix.setPixels(typedData);
+	// Render the canvas to the matrix
+	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
 }
 
+// Add the draw function to the loop register
 AnimationLoop.register('canvasDrawer', draw);
+
+// Start the animation loop
 AnimationLoop.start();
