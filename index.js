@@ -17,7 +17,7 @@ var alert = new Alert(canvas);
  */
 function draw () {
 	// Render the canvas to the matrix
-	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
+	LEDMatrix.setPixels(canvas.getContext('2d').getImageData(0, 0, w, h).data);
 }
 
 // Add the draw function to the loop register
