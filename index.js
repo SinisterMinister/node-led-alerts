@@ -32,6 +32,8 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
+	ctx.fillStyle = '#fff';
+	ctx.fillRect(16, 16, 2, 24);
 	ctx.drawImage(warnIcon, 2, 24);
 
 	// Set the font to 6px
