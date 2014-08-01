@@ -14,7 +14,7 @@ Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
 
 // Load the icons
 var warnIcon = new Canvas.Image();
-warnIcon.src = fs.readFileSync(__dirname+'/images/warning_ffff00_16.png');
+warnIcon.src = fs.readFileSync(__dirname+'/images/warning_ffff00_12.png');
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
@@ -33,7 +33,9 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
-	ctx.drawImage(warnIcon, 2, 8);
+	ctx.drawImage(warnIcon, 2, 2);
+
+	ctx.drawImage(warnIcon, 2, 18);
 
 	// Set the font to 6px
 	ctx.font = "6px small-font";
