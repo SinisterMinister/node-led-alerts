@@ -10,6 +10,7 @@
   "dependencies": {
     "lodash": "^2.4.1",
     "openvg-canvas": "git://github.com/SinisterMinister/node-openvg-canvas.git",
-    "pi-led-matrix": "git://github.com/ritzbitz01/node-led-wrapper.git"
+    "pi-led-matrix": "git://github.com/ritzbitz01/node-led-wrapper.git",
+    "yargs": "^1.3.1"
   }
 }
