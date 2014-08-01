@@ -47,6 +47,8 @@ function draw () {
 
 
 	ctx.fillText(text, 24, 16);
+	ctx.fillText(text, 24, 24);
+	ctx.fillText(text, 24, 32);
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
