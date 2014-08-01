@@ -2,6 +2,7 @@ var Canvas = require('openvg-canvas'),
 	LEDMatrix = new require('pi-led-matrix')(),
 	AnimationLoop = require('./lib/animation-loop'),
 	path = require('path'),
+	fs = require('fs'),
     canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height,
@@ -9,8 +10,10 @@ var Canvas = require('openvg-canvas'),
 
 
 // Register the fonts
-Canvas.Text.registerFont('small-font', process.cwd()+'/small-font.ttf');
-Canvas.Text.registerFont('fontawesome', process.cwd()+'/fontawesome.otf');
+Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
+
+// Load the icons
+var warnIcon = fs.readFileSync(__dirname+'/images/images/warning_ffff00_16.png');
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
@@ -29,9 +32,7 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
-	ctx.font = "16px fontawesome";
-	ctx.fillStyle = 'yellow';
-	ctx.fillText("\uF071", 2, 24);
+	ctx.drawImage(warnIcon, 2, 24);
 
 	// Set the font to 6px
 	ctx.font = "6px small-font";
