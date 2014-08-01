@@ -24,8 +24,8 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
-	// Set the font to 8px
-	ctx.font = "8px 04B_03__.TTF";
+	// Set the font to 6px
+	ctx.font = "6px ./04B_03__.TTF";
 
 	// Build a gradient for the text
 	var gradient=ctx.createLinearGradient(0,0,w,0);
@@ -35,8 +35,8 @@ function draw () {
 
 	// Set the text fill to the gradient and write the text
 	ctx.fillStyle = gradient;
-	ctx.fillText("FPS: "+frameRate, 10, 14);
-	ctx.fillText("Frame: "+frame.toString(), 10, 30);
+	ctx.fillText("FPS: "+frameRate, 2, 8);
+	ctx.fillText("Frame: "+frame.toString(), 2, 16);
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
