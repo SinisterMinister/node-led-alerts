@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "hapi": "^6.2.2",
+    "joi": "^4.6.1",
     "lodash": "^2.4.1",
     "openvg-canvas": "git://github.com/SinisterMinister/node-openvg-canvas.git",
     "pi-led-matrix": "git://github.com/ritzbitz01/node-led-wrapper.git",
