@@ -41,7 +41,12 @@ function draw () {
 	// Set the text fill to the gradient and write the text
 	ctx.fillStyle = 'white';
 	ctx.fillText("Course Structure API", 24, 8);
-	ctx.fillText("dev-use1b-pr-27-csapub-01x05x00-0001 is down!", 24, 16);
+
+	var text = "dev-use1b-csapub-01x05x00-0001 is down!",
+		textWidth = ctx.measureText(text).width;
+
+
+	ctx.fillText(, 24, 16);
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
