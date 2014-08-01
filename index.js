@@ -13,7 +13,10 @@ var Canvas = require('openvg-canvas'),
 function draw () {
 	// Get the framerate
 	frameRate = AnimationLoop.getFrameRate().toString();
-	
+
+	// Increment the frame count
+	frame++;
+
 	// Clear the canvas
 	ctx.clearRect(0, 0, w, h);
 
