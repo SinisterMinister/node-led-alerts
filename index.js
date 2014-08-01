@@ -42,7 +42,7 @@ function draw () {
 	ctx.fillStyle = 'white';
 	ctx.fillText("Course Structure API", 24, 8);
 
-	var text = "dev-use1b-csapub-01x05x00-0001 is down!",
+	var text = "10.199.252.102 is down!",
 		textWidth = ctx.measureText(text).width;
 
 
