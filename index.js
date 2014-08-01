@@ -10,8 +10,8 @@ var Canvas = require('openvg-canvas'),
 Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
 
 // Load a new instance of the alert
-var alert = new Alert(canvas);
-
+//var alert = new Alert(canvas);
+var pacman = new Pacman(canvas);
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
  */
