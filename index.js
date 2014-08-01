@@ -1,5 +1,5 @@
 var Canvas = require('openvg-canvas'),
-	LEDMatrix = new require('pi-led-matrix')(),
+//	LEDMatrix = new require('pi-led-matrix')(),
 	AnimationLoop = require('./lib/animation-loop'),
 	path = require('path'),
 	fs = require('fs'),
