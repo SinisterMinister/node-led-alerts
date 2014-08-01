@@ -10,27 +10,29 @@ var Canvas = require('openvg-canvas'),
 
 
 function draw () {
-	if (frame++ % 10 === 0) {
-		frameRate = AnimationLoop.getFrameRate().toString()
+	var typedData;
+
+	if (frame++ % 100 === 0) {
+		frameRate = AnimationLoop.getFrameRate().toString();
+
+		ctx.fillStyle = 'black';
+		ctx.fillRect(0, 0, w, h);
+
+		ctx.font = "12px sans-serif";
+
+		var gradient=ctx.createLinearGradient(0,0,w,0);
+		gradient.addColorStop("0","magenta");
+		gradient.addColorStop("0.5","blue");
+		gradient.addColorStop("1.0","red");
+
+		// Fill with gradient
+		ctx.fillStyle = gradient;
+		ctx.fillText("FPS: "+frameRate, 10, 14);
+		ctx.fillText("Frame: "+frame.toString(), 10, 30);
+
+		typedData = ctx.getImageData(0, 0, w, h).data;
 	}
 
-	ctx.fillStyle = 'black';
-	ctx.fillRect(0, 0, w, h);
-
-	ctx.font = "12px sans-serif";
-
-	var gradient=ctx.createLinearGradient(0,0,w,0);
-	gradient.addColorStop("0","magenta");
-	gradient.addColorStop("0.5","blue");
-	gradient.addColorStop("1.0","red");
-
-	// Fill with gradient
-	ctx.fillStyle = gradient;
-	ctx.fillText("FPS: "+frameRate, 10, 14);
-	ctx.fillText("Frame: "+frame.toString(), 10, 30);
-
-	var typedData = ctx.getImageData(0, 0, w, h).data,
-		data = [];
 
 //	// Convert to regular array
 //	for (var i = typedData.length - 1; i >= 0; i--) {
