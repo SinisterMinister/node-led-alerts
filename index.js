@@ -13,7 +13,7 @@ var Canvas = require('openvg-canvas'),
 Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
 
 // Load the icons
-var warnIcon = fs.readFileSync(__dirname+'/images/images/warning_ffff00_16.png');
+var warnIcon = fs.readFileSync(__dirname+'/images/warning_ffff00_16.png');
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
