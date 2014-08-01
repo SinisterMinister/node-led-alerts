@@ -5,13 +5,10 @@ var Canvas = require('openvg-canvas'),
     ctx = canvas.getContext('2d'),
     w = canvas.width, h = canvas.height,
 	frame = 0,
-	frameRate = "NA";
-
-
+	frameRate = "NA",
+	typedData;
 
 function draw () {
-	var typedData;
-
 	if (frame++ % 100 === 0) {
 		frameRate = AnimationLoop.getFrameRate().toString();
 
@@ -32,7 +29,6 @@ function draw () {
 
 		typedData = ctx.getImageData(0, 0, w, h).data;
 	}
-
 
 //	// Convert to regular array
 //	for (var i = typedData.length - 1; i >= 0; i--) {
