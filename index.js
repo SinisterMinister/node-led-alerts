@@ -11,6 +11,9 @@ var Canvas = require('openvg-canvas'),
 // Register the fonts
 Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
 
+// Load a new instance of the alert
+var alert = new require('./lib/canvas/alert')(ctx);
+
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
  */
@@ -26,9 +29,6 @@ AnimationLoop.register('canvasDrawer', draw);
 
 // Start the animation loop
 AnimationLoop.start();
-
-// Load a new instance of the alert
-var alert = new require('./lib/canvas/alert')(ctx);
 
 
 //// HAPI server
