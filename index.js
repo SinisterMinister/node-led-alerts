@@ -25,7 +25,7 @@ function draw () {
 	ctx.fillRect(0, 0, w, h);
 
 	// Set the font to 8px
-	ctx.font = "8px monospace";
+	ctx.font = "8px 04B_03__.TTF";
 
 	// Build a gradient for the text
 	var gradient=ctx.createLinearGradient(0,0,w,0);
