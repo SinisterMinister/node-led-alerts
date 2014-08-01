@@ -3,6 +3,7 @@ var Canvas = require('openvg-canvas'),
 	AnimationLoop = require('./lib/animation-loop'),
     canvas = new Canvas(128, 32),
 	Alert = require('./lib/canvas/alert'),
+	Pacman = require('./lib/canvas/pacman'),
     w = canvas.width, h = canvas.height;
 
 
