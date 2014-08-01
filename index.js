@@ -17,13 +17,13 @@ var alert = new require('./lib/canvas/alert')(ctx);
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
  */
-function draw () {
-	// Render the canvas to the matrix
-	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
-}
-
-// Add the draw function to the loop register
-AnimationLoop.register('canvasDrawer', draw);
+//function draw () {
+//	// Render the canvas to the matrix
+//	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
+//}
+//
+//// Add the draw function to the loop register
+//AnimationLoop.register('canvasDrawer', draw);
 
 // Start the animation loop
 AnimationLoop.start();
