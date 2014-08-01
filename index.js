@@ -40,15 +40,15 @@ function draw () {
 
 	// Set the text fill to the gradient and write the text
 	ctx.fillStyle = 'white';
-	ctx.fillText("Course Structure API", 24, 8);
+	ctx.fillText("Course Structure API", 24, 7);
 
 	var text = "10.199.252.102 is down!",
 		textWidth = ctx.measureText(text).width;
 
 
-	ctx.fillText(text, 24, 16);
-	ctx.fillText(text, 24, 24);
-	ctx.fillText(text, 24, 32);
+	ctx.fillText(text, 24, 15);
+	ctx.fillText(text, 24, 23);
+	ctx.fillText(text, 24, 31);
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
