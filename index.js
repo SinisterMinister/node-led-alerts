@@ -26,6 +26,19 @@ AnimationLoop.register('canvasDrawer', draw);
 // Start the animation loop
 AnimationLoop.start();
 
+process.on('exit', function () {
+	AnimationLoop.stop();
+
+	// Black out the LEDs
+	var length = canvas.width * canvas.height * 4,
+		data = new Uint8Array(length);
+
+	for (var i = 0; i < length; i++) {
+		data[i] = 0x00;
+	}
+
+	LEDMatrix.setPixels(data);
+});
 
 //// HAPI server
 //
