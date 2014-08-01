@@ -10,7 +10,7 @@ var Canvas = require('openvg-canvas'),
 
 // Register the fonts
 Canvas.Text.registerFont('small-font', process.cwd()+'/small-font.ttf');
-Canvas.Text.registerFont('fontawesome-webfont', process.cwd()+'/fontawesome-webfont.ttf');
+Canvas.Text.registerFont('fontawesome', process.cwd()+'/fontawesome.otf');
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
@@ -29,9 +29,9 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
-	ctx.font = "16px fontawesome-webfont";
+	ctx.font = "16px fontawesome";
 	ctx.fillStyle = 'yellow';
-	ctx.fillText("\f071", 2, 24);
+	ctx.fillText("\uF071", 2, 24);
 
 	// Set the font to 6px
 	ctx.font = "6px small-font";
