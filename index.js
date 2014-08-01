@@ -32,12 +32,12 @@ function draw () {
 	var typedData = ctx.getImageData(0, 0, w, h).data,
 		data = [];
 
-	// Convert to regular array
-	for (var i = typedData.length - 1; i >= 0; i--) {
-		data.push(typedData[i]);
-	}
+//	// Convert to regular array
+//	for (var i = typedData.length - 1; i >= 0; i--) {
+//		data.push(typedData[i]);
+//	}
 
-	LEDMatrix.setPixels(data);
+	LEDMatrix.setPixels(typedData);
 }
 
 AnimationLoop.register('canvasDrawer', draw);
