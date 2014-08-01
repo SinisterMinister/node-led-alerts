@@ -33,8 +33,8 @@ function draw () {
 	ctx.fillRect(0, 0, w, h);
 
 	ctx.fillStyle = '#fff';
-	ctx.fillRect(2, 24, 16, 16);
-	ctx.drawImage(warnIcon, 2, 24);
+	ctx.fillRect(2, 8, 16, 16);
+	ctx.drawImage(warnIcon, 2, 8);
 
 	// Set the font to 6px
 	ctx.font = "6px small-font";
