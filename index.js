@@ -10,12 +10,11 @@ var Canvas = require('openvg-canvas'),
 
 function draw () {
 	if (frame++ % 100 === 0) {
-		frameRate = AnimationLoop.getFrameRate().toString();
 
 		ctx.fillStyle = 'black';
 		ctx.fillRect(0, 0, w, h);
 
-		ctx.font = "12px sans-serif";
+		ctx.font = "6px sans-serif";
 
 		var gradient=ctx.createLinearGradient(0,0,w,0);
 		gradient.addColorStop("0","magenta");
@@ -24,8 +23,8 @@ function draw () {
 
 		// Fill with gradient
 		ctx.fillStyle = gradient;
-		ctx.fillText("FPS: "+frameRate, 10, 14);
-		ctx.fillText("Frame: "+frame.toString(), 10, 30);
+		ctx.fillText("The quick brown fox jumps over the lazy dog".toLowerCase(), 10, 14);
+		ctx.fillText("The quick brown fox jumps over the lazy dog".toUpperCase(), 10, 30);
 
 		typedData = ctx.getImageData(0, 0, w, h).data;
 	}
