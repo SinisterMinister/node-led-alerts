@@ -14,7 +14,7 @@ Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
 
 // Load the icons
 var warnIcon = new Canvas.Image();
-warnIcon.src = fs.readFileSync(__dirname+'/images/warning_ffff00_12.png');
+warnIcon.src = fs.readFileSync(__dirname+'/images/warning_ffff00_20.png');
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
@@ -33,23 +33,15 @@ function draw () {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, w, h);
 
-	ctx.drawImage(warnIcon, 2, 2);
-
-	ctx.drawImage(warnIcon, 2, 18);
+	ctx.drawImage(warnIcon, 2, 6);
 
 	// Set the font to 6px
 	ctx.font = "6px small-font";
 
-	// Build a gradient for the text
-	var gradient=ctx.createLinearGradient(0,0,w,0);
-	gradient.addColorStop("0","red");
-	gradient.addColorStop("0.5","white");
-	gradient.addColorStop("1.0","blue");
-
 	// Set the text fill to the gradient and write the text
-	ctx.fillStyle = gradient;
-	ctx.fillText("FPS: "+frameRate, 20, 8);
-	ctx.fillText("Frame: "+frame.toString(), 20, 16);
+	ctx.fillStyle = 'white';
+	ctx.fillText("Course Structure API", 24, 8);
+	ctx.fillText("dev-use1b-pr-27-csapub-01x05x00-0001 is down!", 24, 16);
 
 	// Render the canvas to the matrix
 	LEDMatrix.setPixels(ctx.getImageData(0, 0, w, h).data);
