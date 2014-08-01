@@ -3,6 +3,7 @@ var Canvas = require('openvg-canvas'),
 	AnimationLoop = require('./lib/animation-loop'),
     canvas = new Canvas(128, 32),
     ctx = canvas.getContext('2d'),
+	Alert = require('./lib/canvas/alert'),
     w = canvas.width, h = canvas.height;
 
 
@@ -10,7 +11,7 @@ var Canvas = require('openvg-canvas'),
 Canvas.Text.registerFont('small-font', __dirname+'/small-font.ttf');
 
 // Load a new instance of the alert
-var alert = new require('./lib/canvas/alert')(ctx);
+var alert = new Alert(ctx);
 
 /**
  * This is the callback that puts stuff into the canvas and renders to the matrix
